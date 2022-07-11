@@ -14,7 +14,7 @@ class AddMachineToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('machine_id')->nullable();
+            $table->unsignedBigInteger('machine_id')->nullable()->unique();;
             $table->foreign('machine_id')
                 ->references('id')
                 ->on('machines')

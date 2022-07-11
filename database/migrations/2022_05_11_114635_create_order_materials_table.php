@@ -15,12 +15,12 @@ class CreateOrderMaterialsTable extends Migration
     {
         Schema::create('order_materials', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('order_id')->unique();
             $table->foreign('order_id')
                 ->references('id')
                 ->on('orders')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('material_id');
+            $table->unsignedBigInteger('material_id')->unique();;
             $table->foreign('material_id')
                 ->references('product_id')
                 ->on('materials')

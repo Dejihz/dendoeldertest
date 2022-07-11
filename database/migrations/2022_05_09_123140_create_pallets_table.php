@@ -15,7 +15,7 @@ class CreatePalletsTable extends Migration
     {
         Schema::create('pallets', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('product_id')->unique();;
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products')

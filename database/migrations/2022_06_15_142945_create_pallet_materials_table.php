@@ -15,12 +15,12 @@ class CreatePalletMaterialsTable extends Migration
     {
         Schema::create('pallet_materials', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pallet_id');
+            $table->unsignedBigInteger('pallet_id')->unique();;
             $table->foreign('pallet_id')
                 ->references('product_id')
                 ->on('pallets')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('material_id');
+            $table->unsignedBigInteger('material_id')->unique();;
             $table->foreign('material_id')
                 ->references('product_id')
                 ->on('materials')

@@ -15,12 +15,12 @@ class CreateProductLocationsTable extends Migration
     {
         Schema::create('product_locations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('location_id');
+            $table->unsignedBigInteger('location_id')->unique();;
             $table->foreign('location_id')
                 ->references('id')
                 ->on('locations')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('product_id')->unique();;
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products')

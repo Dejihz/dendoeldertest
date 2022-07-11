@@ -15,7 +15,7 @@ class CreateHourlyReportsTable extends Migration
     {
         Schema::create('hourly_reports', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('order_id')->unique();;
             $table->foreign('order_id')
                 ->references('id')
                 ->on('orders')

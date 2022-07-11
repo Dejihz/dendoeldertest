@@ -20,8 +20,8 @@ class CreateOrdersTable extends Migration
             $table->foreign('pallet_id')
                 ->references('product_id')
                 ->on('pallets')
-                ->onDelete('restrict');
-            $table->unsignedBigInteger('machine_id');
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('machine_id')->unique();;
             $table->foreign('machine_id')
                 ->references('id')
                 ->on('machines')

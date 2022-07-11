@@ -15,7 +15,7 @@ class CreateMaterialsTable extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
-                $table->unsignedBigInteger('product_id');
+                $table->unsignedBigInteger('product_id')->unique();;
                 $table->foreign('product_id')
                     ->references('id')
                     ->on('products')

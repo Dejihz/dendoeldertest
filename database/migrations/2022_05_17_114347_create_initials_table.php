@@ -15,7 +15,7 @@ class CreateInitialsTable extends Migration
     {
         Schema::create('initials', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('order_id')->nullable();
+            $table->unsignedBigInteger('order_id')->nullable()->unique();
             $table->foreign('order_id')
                 ->references('id')
                 ->on('orders')

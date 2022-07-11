@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             PalletSeeder::class,
 //            MaterialSeeder::class,
 //            ProductLocationSeeder::class,
-//            MachineSeeder::class,
+            MachineSeeder::class,
 //            OrderSeeder::class,
 //            HourlyReportSeeder::class,
 //            NoteSeeder::class,

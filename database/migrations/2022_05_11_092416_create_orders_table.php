@@ -16,11 +16,11 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('order_number');
-            $table->unsignedBigInteger('pallet_id')->unique();
-            $table->foreign('pallet_id')
-                ->references('product_id')
-                ->on('pallets')
-                ->onDelete('restrict');
+//            $table->unsignedBigInteger('pallet_id')->unique();
+//            $table->foreign('pallet_id')
+//                ->references('product_id')
+//                ->on('pallets')
+//                ->onDelete('restrict');
             $table->unsignedBigInteger('machine_id');
             $table->foreign('machine_id')
                 ->references('id')

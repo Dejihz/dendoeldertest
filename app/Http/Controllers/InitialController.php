@@ -149,7 +149,7 @@ class InitialController extends Controller
             'stapelTick'=>'required|boolean',
             'stapelAang'=>'min:0',
 
-            'strappenTick'=>'required',
+            'strappenTick'=>'min:0',
             'strappenAang'=>'min:0',
 
             'kamerTick'=>'required',
